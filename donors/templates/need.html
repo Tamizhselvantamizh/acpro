@@ -1,0 +1,41 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class = "content-section">
+	<form method="POST" action="">
+		{{ form.hidden_tag() }}
+		<fieldset class="form-group">
+			<legend class="border-bottom mb-4"> Dont worry we are here to help you!!! </legend>
+			<div class="form-group"> 
+				{{form.hospital.label(class="form-control-label")}}
+				{% if form.hospital.errors %}
+					{{ form.hospital(class ="form-control form-control-lg is.invalid")}}
+					<div class="invalid-feedback">
+						{% for error in form.hospital.errors %}
+						<span>{{ error }}</span>
+						{% endfor %}
+					</div>
+				{% else %}
+					{{form.hospital(class="form-control form-control-lg")}}
+				{% endif %}
+			</div>
+			<div class="form-group">
+				{{ form.list_blood.label(class="form-control-label") }}
+                    {% if form.list_blood.errors %}
+                        {{ form.list_blood(class="form-control form-control-lg is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.list_blood.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.list_blood(class="form-control form-control-lg") }}
+                    {% endif %}
+                </div>
+			</div>
+		</fieldset>
+		<div class="form-group">
+                {{ form.submit(class="btn btn-outline-info") }}
+        </div>
+	</form>
+</div> 
+{% endblock content %}}
