@@ -174,8 +174,8 @@ def getjs(blg):
 
 @app.route('/sendsms', methods=['POST'])
 def sendsms():
-    account_sid = 'AC980f57a52c03bd88aee6ed52f6b2edae'
-    auth_token = 'a6af99a4ca41406b700e4880e993c2d9'
+    account_sid = '**************'
+    auth_token = '************'
     client = Client(account_sid, auth_token)
     phonenumber = request.form['phonenumber']
     call = client.calls.create(
@@ -189,12 +189,12 @@ def sendsms():
 
 @app.route('/sending', methods=['POST'])
 def sending():
-    account_sid = 'AC980f57a52c03bd88aee6ed52f6b2edae'
-    auth_token = 'a6af99a4ca41406b700e4880e993c2d9'
+    account_sid = '****************'
+    auth_token = '*************'
     client = Client(account_sid, auth_token)
     phonenumber = request.form['phonenumber']
     message = client.messages.create(
-                              from_= '+12673231230',
+                              from_= '+12****',
                               body='test message',
                               to= '+91' + phonenumber
                               )
