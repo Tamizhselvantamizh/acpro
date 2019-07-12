@@ -8,8 +8,6 @@ from flask_login import login_user, current_user, logout_user, login_required
 from twilio.rest import Client
 from twilio.twiml.voice_response import VoiceResponse, Say
 
-
-
 @app.route("/")
 @app.route("/home")
 @login_required
